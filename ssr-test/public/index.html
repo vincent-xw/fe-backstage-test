@@ -10,6 +10,12 @@
     <div id="app"></div>
 </body>
 <script>
+    window.onunload = function(e) {
+        console.log('URL尝试变化');
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    }
     window.onload = function () {
         let app = document.querySelector('#app');
         let path = location.pathname;
